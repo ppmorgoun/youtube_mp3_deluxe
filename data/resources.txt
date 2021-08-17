@@ -1,0 +1,7 @@
+Datasets for named entity recognition (including labels)
+
+Assorted datasets for entity recognition
+https://github.com/juand-r/entity-recognition-datasets
+
+Twitter NLP dataset (huge - has music artist labels)
+https://github.com/aritter/twitter_nlp/blob/master/data/annotated/ner.txt
