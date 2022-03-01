@@ -1,27 +1,4 @@
 https://docs.google.com/document/d/1YzbtVV4D9byGqIfl4rQyHppP7Y7lYUWxRvCxjsVNaps/edit
 
-YOUTUBE-DL FETCHING ME AN ERROR:
-
-youtube-dl "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-[youtube] dQw4w9WgXcQ: Downloading webpage
-ERROR: dQw4w9WgXcQ: YouTube said: Unable to extract video data
-petr@Petrs-MBP testing % youtube-dl --verbose "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-[debug] System config: []
-[debug] User config: []
-[debug] Custom config: []
-[debug] Command-line args: ['--verbose', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ']
-[debug] Encodings: locale UTF-8, fs utf-8, out utf-8, pref UTF-8
-[debug] youtube-dl version 2020.07.28
-[debug] Python version 3.8.3 (CPython) - macOS-10.15.7-x86_64-i386-64bit
-[debug] exe versions: ffmpeg 4.3.1, ffprobe 4.3.1, rtmpdump 2.4
-[debug] Proxy map: {}
-[youtube] dQw4w9WgXcQ: Downloading webpage
-ERROR: dQw4w9WgXcQ: YouTube said: Unable to extract video data
-Traceback (most recent call last):
-  File "/usr/local/bin/youtube-dl/youtube_dl/YoutubeDL.py", line 797, in extract_info
-    ie_result = ie.extract(url)
-  File "/usr/local/bin/youtube-dl/youtube_dl/extractor/common.py", line 530, in extract
-    ie_result = self._real_extract(url)
-  File "/usr/local/bin/youtube-dl/youtube_dl/extractor/youtube.py", line 1892, in _real_extract
-    raise ExtractorError(
-youtube_dl.utils.ExtractorError: dQw4w9WgXcQ: YouTube said: Unable to extract video data
+yt-dlp github:
+https://github.com/yt-dlp/yt-dlp
