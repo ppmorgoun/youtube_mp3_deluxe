@@ -39,36 +39,46 @@ def set_URL_options(URL_options_list = []):
         if multiple not in ["0", "1"]:
             print("Sorry, please input either a 0, or a 1")
             continue
-        elif multiple == 1:
+        elif multiple == "1":
             URL_options_list = set_URL_options(URL_options_list)
             break
         else:
             break
     return URL_options_list
 
+
+def set_URL_options_helper(URL_options_list=[]):
+    pass
+
 if __name__ == "__main__":
     # Ask the user what type of URL is being input
     options = set_URL_options()
-    # Save the video metadata in the appropriate places
-    if len(options) == 1:
-        options = options[0]
-        if options['SongsOrNotOrMixed'] == "1":
-            path = f"../data/music_data/{options['Name']}.csv"
-        elif options['SongsOrNotOrMixed'] == "0":
-            path = f"../data/non_music_data/{options['Name']}.csv"
+    print([i for i in options])
+    number_of_downloads = len(options)
+    counter = 1
+    downloaded = 0
+    for option in options:
+        # Save the video metadata in the appropriate places
+        if option['SongsOrNotOrMixed'] == "1":
+            path = f"../data/music_data/{option['Name']}.csv"
+        elif option['SongsOrNotOrMixed'] == "0":
+            path = f"../data/non_music_data/{option['Name']}.csv"
         else:
-            path = f"../data/mixed_data/{options['Name']}.csv"
+            path = f"../data/mixed_data/{option['Name']}.csv"
 
-        if options['playlist_bool'] == "0":
+        if option['playlist_bool'] == "0":
             print('Sorry, the functionality to classify/download an individual video URL hasn\'nt been built yet')
+            counter += 1
         else:
-            df = download_metadata.playlist_features_csv(options['URL'], 'ALL')
+            df = download_metadata.playlist_features_csv(option['URL'], 'ALL')
             df.to_csv(path)
-            # print('YOU HAVE REACHED THE END OF YOUR TEST')
-            # print(options)
-            # print(f"The {options['type']} dataframe would have been saved in: {path}")
+            print(f"COMPLETED DOWNLOAD OF METADATA: {option['type']} {counter} of {number_of_downloads} saved in {path}")
+            counter += 1
+            downloaded += 1
 
-            print(f"COMPLETED DOWNLOAD: saved in {path}")
+    print(f"DOWNLOADS COMPLETED: SUCCESSFULLY DOWNLOADED {downloaded} out of {number_of_downloads} playlists")
+
+
 ### YouTube playlist URLs:
 """
 NON-MUSIC
